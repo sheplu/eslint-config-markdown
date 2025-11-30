@@ -9,7 +9,7 @@ export const eslintMarkdownRules = {
 		'markdown/heading-increment': [
 			'error',
 			{
-				frontmatterTitle: '',
+				frontmatterTitle: '^(?!\\s*[\'"]title[:=][\'"])\\s*\\{?\\s*[\'"]?title[\'"]?\\s*[:=]',
 			},
 		],
 		'markdown/no-bare-urls': [ 'error' ],
