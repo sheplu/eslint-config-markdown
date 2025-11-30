@@ -24,7 +24,10 @@
     "code-style",
     "sheplu"
   ],
-  "author": "Jean Burellier",
+  "author": {
+	"name": "Jean Burellier",
+	"url": "https://github.com/sheplu"
+  },
   "license": "MIT",
   "type": "module",
   "bugs": {
