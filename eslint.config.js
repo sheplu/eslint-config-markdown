@@ -15,7 +15,7 @@ export default defineConfig([
 			eslintRules,
 			stylisticRules,
 		],
-		'files': [ '**/*.{js,mjs,cjs}' ],
+		'files': ['**/*.{js,mjs,cjs}'],
 		'languageOptions': {
 			globals: globals.node,
 		},
@@ -25,9 +25,12 @@ export default defineConfig([
 		},
 	},
 	{
-		'extends': [ markdownRules ],
 		'files': [ '**/*.md' ],
-		'language': 'markdown/gfm',
 		'plugins': { markdown },
+		'language': 'markdown/gfm',
+		'extends': [ markdownRules ],
+		languageOptions: {
+			frontmatter: "yaml",
+		},
 	},
 ]);
