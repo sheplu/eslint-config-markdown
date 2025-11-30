@@ -66,7 +66,7 @@ export const eslintMarkdownRules = {
 		'markdown/no-multiple-h1': [
 			'error',
 			{
-				frontmatterTitle: '',
+				frontmatterTitle: '^(?!\\s*[\'"]title[:=][\'"])\\s*\\{?\\s*[\'"]?title[\'"]?\\s*[:=]',
 			},
 		],
 		'markdown/no-reference-like-urls': [ 'error' ],
