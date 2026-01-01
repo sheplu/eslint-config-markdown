@@ -26,4 +26,4 @@ jobs:
 
       - name: Exec check
         run: |
-          node review-rules.js
+          npm run test
