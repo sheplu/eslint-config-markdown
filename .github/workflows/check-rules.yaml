@@ -1,0 +1,29 @@
+name: Check rules
+on:
+  push:
+
+jobs:
+  check-rules:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Checkout Remote
+        uses: actions/checkout@v6
+        with:
+          repository: eslint/markdown
+          path: './remote'
+
+      - name: Exec check
+        run: |
+          node review-rules.js
