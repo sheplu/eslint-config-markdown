@@ -6,9 +6,9 @@ export const eslintMarkdownRules = {
 				required: [],
 			},
 		],
-		'markdown/fenced-code-meta': [
-			'error', 'always'
-		],
+		// 'markdown/fenced-code-meta': [
+		// 	'error', 'always'
+		// ],
 		'markdown/heading-increment': [
 			'error',
 			{
