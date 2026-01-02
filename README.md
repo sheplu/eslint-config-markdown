@@ -54,8 +54,8 @@ export default defineConfig([
         'plugins': { markdown },
         'language': 'markdown/gfm',
         'extends': [markdownRules],
-        languageOptions: {
-            frontmatter: "yaml",
+        'languageOptions': {
+            frontmatter: 'yaml',
         },
     }
 ]);
