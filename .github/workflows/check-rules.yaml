@@ -18,6 +18,11 @@ jobs:
           node-version: 24
           registry-url: "https://registry.npmjs.org"
 
+      - name: Run Lint
+        run: |
+          npm ci
+          npm run lint
+
       - name: Checkout Remote
         uses: actions/checkout@v6
         with:

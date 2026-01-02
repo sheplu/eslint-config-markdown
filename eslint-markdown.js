@@ -6,13 +6,17 @@ export const eslintMarkdownRules = {
 				required: [],
 			},
 		],
-		// 'markdown/fenced-code-meta': [
-		// 	'error', 'always'
-		// ],
+
+		/*
+		 * 'markdown/fenced-code-meta': [
+		 * 'error', 'always'
+		 * ],
+		 */
 		'markdown/heading-increment': [
 			'error',
 			{
-				frontmatterTitle: '^(?!\\s*[\'"]title[:=][\'"])\\s*\\{?\\s*[\'"]?title[\'"]?\\s*[:=]',
+				frontmatterTitle:
+					'^(?!\\s*[\'"]title[:=][\'"])\\s*\\{?\\s*[\'"]?title[\'"]?\\s*[:=]',
 			},
 		],
 		'markdown/no-bare-urls': [ 'error' ],
@@ -69,7 +73,8 @@ export const eslintMarkdownRules = {
 		'markdown/no-multiple-h1': [
 			'error',
 			{
-				frontmatterTitle: '^(?!\\s*[\'"]title[:=][\'"])\\s*\\{?\\s*[\'"]?title[\'"]?\\s*[:=]',
+				frontmatterTitle:
+					'^(?!\\s*[\'"]title[:=][\'"])\\s*\\{?\\s*[\'"]?title[\'"]?\\s*[:=]',
 			},
 		],
 		'markdown/no-reference-like-urls': [ 'error' ],

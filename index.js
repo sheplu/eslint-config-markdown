@@ -9,10 +9,10 @@ export const markdownRules = [
 ];
 
 export const defaultMarkdownConfig = {
-	'files': ['**/*.md'],
+	'files': [ '**/*.md' ],
 	'language': 'markdown/gfm',
-	'extends': [markdownRules],
-	languageOptions: {
-		frontmatter: "yaml",
+	'extends': [ markdownRules ],
+	'languageOptions': {
+		frontmatter: 'yaml',
 	},
 };
