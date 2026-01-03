@@ -1,7 +1,7 @@
 {
   "name": "@sheplu/eslint-config-markdown",
   "version": "1.0.0",
-  "description": "Opinionated ESLint rules and config for consistent, high-quality documentation with zero setup.",
+  "description": "Opinionated ESLint rules and config for consistent, high-quality markdown documentation with zero setup.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -23,7 +23,8 @@
     "javascript",
     "markdown",
     "code-style",
-    "sheplu"
+    "sheplu",
+	"documentation"
   ],
   "author": {
 	"name": "Jean Burellier",
