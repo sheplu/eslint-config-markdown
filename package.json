@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "description": "Opinionated ESLint rules and config for consistent, high-quality markdown documentation with zero setup.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-	"test": "node --test tests/rules.js"
+    "test": "node --test tests/rules.js"
   },
   "repository": {
     "type": "git",
@@ -24,11 +32,11 @@
     "markdown",
     "code-style",
     "sheplu",
-	"documentation"
+    "documentation"
   ],
   "author": {
-	"name": "Jean Burellier",
-	"url": "https://github.com/sheplu"
+    "name": "Jean Burellier",
+    "url": "https://github.com/sheplu"
   },
   "license": "MIT",
   "type": "module",
@@ -36,15 +44,20 @@
     "url": "https://github.com/sheplu/eslint-config-markdown/issues"
   },
   "homepage": "https://github.com/sheplu/eslint-config-markdown#readme",
+  "engines": {
+    "node": ">=24"
+  },
   "peerDependencies": {
-    "eslint": ">=9"
+    "eslint": ">=10",
+    "@eslint/markdown": ">=8"
   },
   "files": [
     "package.json",
     "README.md",
     "LICENSE",
     "index.js",
-    "eslint-markdown.js"
+    "index.d.ts",
+    "src"
   ],
   "devDependencies": {
     "@eslint/js": "^10.0.1",
