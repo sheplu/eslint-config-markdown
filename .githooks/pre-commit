@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+. "$(dirname "$0")/_lib.sh"
+
+echo '------ Running pre-commit hooks ------'
+
+run_parallel Lint npm run lint
+run_parallel Test npm test
+
+wait_step Lint
+wait_step Test
+
+ok '✔ pre-commit: all checks passed'

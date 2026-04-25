@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+. "$(dirname "$0")/_lib.sh"
+
+echo '------ Running pre-push hooks ------'
+
+protected_branch="main"
+while read -r _local_ref _local_sha remote_ref _remote_sha; do
+  if [ "$remote_ref" = "refs/heads/$protected_branch" ]; then
+    echo "pre-push: direct push to '$protected_branch' is blocked. Open a PR instead." >&2
+    exit 1
+  fi
+done
+
+run_parallel Lint npm run lint
+run_parallel Coverage npm run test:coverage
+run_parallel Audit npm audit
+
+wait_step Lint
+wait_step Coverage
+wait_step Audit
+
+ok '✔ pre-push: all checks passed'
