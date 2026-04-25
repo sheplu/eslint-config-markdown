@@ -1,0 +1,27 @@
+{
+  "lockfileVersion": 1,
+  "requires": true,
+  "resolved": "2026-04-21T16:18:58.527398+00:00",
+  "packages": {
+    "@sheplu/github-ci-cd@0.1.0": {
+      "version": "0.1.0",
+      "resolved": "https://registry.apkg.ai/api/v1/packages/@sheplu/github-ci-cd/0.1.0/tarball",
+      "integrity": "sha256-zrcaB1TRMoF6JNvSeBnv2MFsUU0NLn5amW4FCLc9IsA=",
+      "dependencies": {
+        "@sheplu/github-workflows": "^0.1.0"
+      },
+      "peerDependencies": {},
+      "type": "agent",
+      "optional": false
+    },
+    "@sheplu/github-workflows@0.1.0": {
+      "version": "0.1.0",
+      "resolved": "https://registry.apkg.ai/api/v1/packages/@sheplu/github-workflows/0.1.0/tarball",
+      "integrity": "sha256-+DEm1498bP6FZVNO3D8S8nv22M5igeyR7StTX+mgByM=",
+      "dependencies": {},
+      "peerDependencies": {},
+      "type": "rule",
+      "optional": false
+    }
+  }
+}
