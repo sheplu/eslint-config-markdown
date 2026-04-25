@@ -14,7 +14,7 @@ import {
 	parseUpstreamRules,
 } from './review-rules.js';
 import assert from 'node:assert/strict';
-import { eslintMarkdownRules } from '../eslint-markdown.js';
+import { eslintMarkdownRules } from '../src/eslint-markdown.js';
 import markdown from '@eslint/markdown';
 
 const validSeverities = new Set([
