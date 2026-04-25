@@ -18,6 +18,7 @@ export default defineConfig([
 		},
 		'plugins': { '@stylistic': stylistic, js },
 		'rules': {
+			'@stylistic/curly-newline': 'warn',
 		},
 	},
 	{
