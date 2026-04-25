@@ -1,4 +1,4 @@
-import { eslintMarkdownRules } from './eslint-markdown.js';
+import { eslintMarkdownRules } from './src/eslint-markdown.js';
 
 export const markdownRules = [
 	{
