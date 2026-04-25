@@ -39,6 +39,11 @@ jobs:
         run: |
           npm run lint
 
+      - name: Install apkg packages
+        uses: apkg-ai/setup-apkg@1cb194cb63b33f671e1d6f8a1a6b183a6acddf2d # main @ 2026-04-21
+        with:
+          run-install: '--frozen-lockfile'
+
       - name: Run tests with coverage
         run: |
           npm run test:coverage
