@@ -11,7 +11,7 @@ Every non-deprecated upstream rule is configured explicitly, so nothing is left 
 
 ## Installation
 
-```sh
+```sh title="install"
 npm install --save-dev @sheplu/eslint-config-markdown eslint @eslint/markdown
 ```
 
@@ -21,7 +21,7 @@ Requires `eslint >= 10` (flat config), `@eslint/markdown >= 8`, and Node `>= 24`
 
 The drop-in `defaultMarkdownConfig` wires the plugin, the language (GFM, YAML frontmatter), and the rules in one object:
 
-```js
+```js title="eslint.config.js"
 import { defineConfig } from 'eslint/config';
 import { defaultMarkdownConfig } from '@sheplu/eslint-config-markdown';
 
@@ -32,7 +32,7 @@ export default defineConfig([
 
 Or use `markdownRules` on its own if you want to supply your own `files` glob, `plugins`, or `language`:
 
-```js
+```js title="eslint.config.js"
 import { defineConfig } from 'eslint/config';
 import markdown from '@eslint/markdown';
 import { markdownRules } from '@sheplu/eslint-config-markdown';
@@ -56,11 +56,9 @@ export default defineConfig([
 
 Every rule is set to `error` with options spelled out explicitly. If you need a more permissive baseline, override rules individually in your own config.
 
-One rule upstream is intentionally not configured (`fenced-code-meta`) because it is not actively wanted in this package's baseline. If you do want it, enable it in your own config.
-
 ## Scripts
 
-```sh
+```sh title="scripts"
 npm test                 # run the test suite (includes upstream drift check)
 npm run test:coverage    # run tests with coverage
 npm run lint             # lint the package itself
