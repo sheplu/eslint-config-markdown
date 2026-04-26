@@ -63,6 +63,10 @@ describe('defaultMarkdownConfig', () => {
 		assert.equal(defaultMarkdownConfig.language, 'markdown/gfm');
 	});
 
+	it('registers the @eslint/markdown plugin by identity', () => {
+		assert.equal(defaultMarkdownConfig.plugins.markdown, markdown);
+	});
+
 	it('extends markdownRules by identity', () => {
 		assert.equal(defaultMarkdownConfig.extends[0], markdownRules);
 	});
@@ -71,12 +75,13 @@ describe('defaultMarkdownConfig', () => {
 		assert.equal(defaultMarkdownConfig.languageOptions.frontmatter, 'yaml');
 	});
 
-	it('exposes exactly files/language/extends/languageOptions keys', () => {
+	it('exposes exactly files/plugins/language/extends/languageOptions keys', () => {
 		assert.deepEqual(Object.keys(defaultMarkdownConfig).sort(), [
 			'extends',
 			'files',
 			'language',
 			'languageOptions',
+			'plugins',
 		]);
 	});
 });
