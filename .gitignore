@@ -138,9 +138,11 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# AI tooling (materialized by apkg)
-.codex/
-.claude/
-.cursor/
+# APKG
+apkg_packages/*
+
+# AI
+.claude/*
+.codex/*
+.cursor/*
 CLAUDE.md
-apkg_packages/

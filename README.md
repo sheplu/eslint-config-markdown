@@ -19,18 +19,14 @@ Requires `eslint >= 10` (flat config), `@eslint/markdown >= 8`, and Node `>= 24`
 
 ## Usage
 
-The drop-in `defaultMarkdownConfig` wires the language (GFM, YAML frontmatter) and the rules in one object:
+The drop-in `defaultMarkdownConfig` wires the plugin, the language (GFM, YAML frontmatter), and the rules in one object:
 
 ```js
 import { defineConfig } from 'eslint/config';
-import markdown from '@eslint/markdown';
 import { defaultMarkdownConfig } from '@sheplu/eslint-config-markdown';
 
 export default defineConfig([
-    {
-        ...defaultMarkdownConfig,
-        plugins: { markdown },
-    },
+    defaultMarkdownConfig,
 ]);
 ```
 

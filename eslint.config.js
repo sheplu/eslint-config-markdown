@@ -1,8 +1,7 @@
+import { defaultMarkdownConfig } from './index.js';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import js from '@eslint/js';
-import markdown from '@eslint/markdown';
-import { markdownRules } from './index.js';
 import stylistic from '@stylistic/eslint-plugin';
 import stylisticRules from '@sheplu/eslint-config/src/stylistic.js';
 
@@ -21,13 +20,5 @@ export default defineConfig([
 			'@stylistic/curly-newline': 'warn',
 		},
 	},
-	{
-		'files': [ '**/*.md' ],
-		'plugins': { markdown },
-		'language': 'markdown/gfm',
-		'extends': [ markdownRules ],
-		'languageOptions': {
-			frontmatter: 'yaml',
-		},
-	},
+	defaultMarkdownConfig,
 ]);
