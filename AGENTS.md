@@ -14,8 +14,6 @@ Instructions for coding agents working in this repository.
 - Tests in `test/` (Node built-in `node:test`, no framework).
 - Drift check: `test/review-rules.js` + the upstream assertion in `test/index.test.js`.
 
-One rule upstream is intentionally **not** configured (`fenced-code-meta`). It is listed in `INTENTIONALLY_UNCONFIGURED_RULES` in both `test/review-rules.js` and `test/index.test.js` so the drift diff ignores it rather than failing silently.
-
 ## Environment
 
 - Node `>= 24` (uses `node --test --experimental-test-coverage`).
@@ -26,7 +24,7 @@ One rule upstream is intentionally **not** configured (`fenced-code-meta`). It i
 
 ## Commands
 
-```sh
+```sh title="commands"
 npm ci                   # install dependencies
 npm run setup:hooks      # wire .githooks/ as core.hooksPath (run once after cloning)
 npm test                 # node --test (includes live upstream drift check — needs network)
@@ -60,8 +58,7 @@ Tooling directories are **gitignored** and provisioned on demand:
 
 1. Add the rule to `src/eslint-markdown.js` with explicit options.
 2. Keep every rule at `error` with spelled-out options unless there is a clear reason otherwise.
-3. If you're enabling `fenced-code-meta` (or another rule currently marked intentionally unconfigured), remove it from `INTENTIONALLY_UNCONFIGURED_RULES` in both `test/review-rules.js` and `test/index.test.js`.
-4. Run `npm test` — the upstream diff will catch renamed/removed rules, the offline plugin-drift test will catch rules missing from the installed `@eslint/markdown`.
+3. Run `npm test` — the upstream diff will catch renamed/removed rules, the offline plugin-drift test will catch rules missing from the installed `@eslint/markdown`.
 
 ## CI quality gates
 

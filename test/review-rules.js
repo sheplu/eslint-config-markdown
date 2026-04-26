@@ -2,13 +2,6 @@ const UPSTREAM_URL = 'https://api.github.com/repos/eslint/markdown/contents/docs
 const IGNORED_BASENAMES = new Set([ 'README', 'index' ]);
 const MIN_EXPECTED_RULES = 10;
 
-/*
- * Rules that exist upstream but this package intentionally does not configure.
- * Listed here so the drift diff ignores them instead of failing, and so the
- * omission is explicit rather than silent.
- */
-const INTENTIONALLY_UNCONFIGURED_RULES = new Set([ 'fenced-code-meta' ]);
-
 export function parseUpstreamRules(apiResponse) {
 	if (!Array.isArray(apiResponse)) {
 		return [];
@@ -18,7 +11,6 @@ export function parseUpstreamRules(apiResponse) {
 		.filter((entry) => entry.type === 'file' && entry.name.endsWith('.md'))
 		.map((entry) => entry.name.replace(/\.md$/, ''))
 		.filter((name) => !IGNORED_BASENAMES.has(name))
-		.filter((name) => !INTENTIONALLY_UNCONFIGURED_RULES.has(name))
 		.sort();
 }
 

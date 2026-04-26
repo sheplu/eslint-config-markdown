@@ -35,8 +35,6 @@ function isValidSeverity(value) {
 
 const stripPrefix = (name) => name.replace(/^markdown\//, '');
 
-const INTENTIONALLY_UNCONFIGURED_RULES = new Set([ 'fenced-code-meta' ]);
-
 describe('markdownRules export shape', () => {
 	it('is a non-empty array with a single config object', () => {
 		const expectedLength = 1;
@@ -150,8 +148,7 @@ describe('rule names are unique & well-formed', () => {
 
 describe('installed plugin drift (offline)', () => {
 	it('every configured rule exists in the installed @eslint/markdown plugin', () => {
-		const pluginRules = Object.keys(markdown.rules)
-			.filter((name) => !INTENTIONALLY_UNCONFIGURED_RULES.has(name));
+		const pluginRules = Object.keys(markdown.rules);
 		const configRules = Object.keys(eslintMarkdownRules.rules).map(stripPrefix);
 		const { missing, extra } = diffRules(configRules, pluginRules);
 
@@ -174,15 +171,6 @@ describe('upstream rule parser', () => {
 			'no-bare-urls',
 			'no-empty-links',
 		]);
-	});
-
-	it('filters out intentionally-unconfigured rules', () => {
-		const response = [
-			{ name: 'fenced-code-language.md', type: 'file' },
-			{ name: 'fenced-code-meta.md', type: 'file' },
-		];
-
-		assert.deepEqual(parseUpstreamRules(response), [ 'fenced-code-language' ]);
 	});
 
 	it('returns an empty array when given an empty list', () => {
