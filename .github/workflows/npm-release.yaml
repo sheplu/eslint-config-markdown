@@ -41,9 +41,10 @@ jobs:
           TAG_NAME: ${{ github.event.release.tag_name }}
         run: |
           if ! printf '%s' "$TAG_NAME" | grep -Eq '^v?[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?$'; then
-            echo "Release tag '$TAG_NAME' is not a valid semver tag — aborting."
+            echo "Release tag '$TAG_NAME' is not a valid semver tag (expected e.g. v1.2.3, 1.2.3, or 1.2.3-rc.1) — aborting."
             exit 1
           fi
+          echo "Tag format OK: '$TAG_NAME'."
 
       - name: Version
         run: |
